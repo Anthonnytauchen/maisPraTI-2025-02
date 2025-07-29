@@ -9,6 +9,24 @@ body {
     line-height: 1.5;
     color: #333;
 }
+.hero{
+    background-image: url("https://images.pexels.com/photos/3635870/pexels-photo-3635870.jpeg");
+        /* Faz a imagem cobrir toda a área de fundo, sem distorcer */
+    background-size: cover;
+
+    /* Centraliza a imagem */
+    background-position: bottom;
+
+    /* Evita que a imagem se repita */
+    background-repeat: no-repeat;
+
+    /* Mantém a imagem fixa durante a rolagem da página (efeito parallax) */
+    background-attachment: fixed;
+
+    /* Garante que o fundo ocupe toda a altura da tela */
+    min-height: 50vh; /* vh = viewport height */
+
+}
 
 .container {
     width: 90%;
@@ -75,11 +93,18 @@ nav li +li {
     background-color: #f4f4f4;
     padding: 4rem 0;
     text-align: center;
+    font-size: 2rem;
+    color: #121111;
 }
 
 .hero .btn {
+    font-size: 1rem;
     margin-top: 1rem;
     text-decoration: none;
+}
+.imagem-fluida {
+  max-width: 100%;
+  height: auto;
 }
 
 .services {

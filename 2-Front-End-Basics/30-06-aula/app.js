@@ -18,22 +18,37 @@ function salvarDados() {
 }
 
 function renderizarLista() {
+    const listaItens=document.getElementById('lista-itens')
     listaItens.innerHTML = ''
     itens.forEach((item, index) => {
         const li = document.createElement('li')
+        if(item.comprado){
+            li.classList.add('comprado')
+        }
 
         const span = document.createElement('span')
         span.textContent = item
 
         const btnRemover = document.createElement('button')
+        const btnComprado=document.createElement('button')
+        
+        btnComprado.id='buttonV'
+        btnComprado.textContent= '✓'
+        btnComprado.title='Marcar como comprado'
+       
         btnRemover.textContent = 'X'
         btnRemover.title = 'Remover Item'
-
+        btnComprado.addEventListener('click', ()=>{
+            itens[index].comprado =!itens[index].comprado
+            buttonV.style.backgroundColor= 'red'
+            salvarDados()
+            renderizarLista()
+        })
         btnRemover.addEventListener('click', () => {
             removerItem(index)
         })
 
-        li.append(span, btnRemover)
+        li.append(span,btnComprado,btnRemover,)
         listaItens.appendChild(li)
     })
 }
